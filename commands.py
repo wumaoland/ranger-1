@@ -9,6 +9,10 @@ class paste_as_root(Command):
             self.fm.execute_console('shell sudo mv %c .')
         else:
             self.fm.execute_console('shell sudo cp -r %c .')
+class setbg(Command):
+    def execute(self):
+        tfile=self.fm.thisfile
+        self.fm.execute_console('shell setbg'+" "+tfile.path)
 
 
 class toggleVCS(Command):
